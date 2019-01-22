@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu:700" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+
+    <title>Languorem Development Blog</title>
+  </head>
+  <body id="home">
+    <header>
+      <div class="container">
+        <a href="/">
+          <img alt="Languorem logo" src="minilogo.png" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>A web dev's journey to designing a game.</h2>
+            <p>
+              Welcome to the official Languorem development blog. Until release, this site will
+              serve as a journal of how Languorem was built and the process of going from zero
+              to game designer.
+            </p>
+          </div>
+        </div>
+        {% for post in posts %}
+        <div class="row">
+          <div class="col-md-12">
+            <h1><a href="{{ post.link }}">{{ post.title }}</a></h1>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "languorem-website",
+  "version": "0.1.0",
+  "description": "The dev blog for Languorem",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "mkdir -p dist && rm -r dist && npm run prepare-static",
+    "prepare-static": "cp -a static/. dist",
+    "build": "npm run build-content & npm run build-styles & wait",
+    "build-content": "node build.js",
+    "build-styles": "lessc less/app.less dist/css/app.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/languoremgame/languorem-website.git"
+  },
+  "keywords": [
+    "languorem"
+  ],
+  "author": "Juxtapose Technologies",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/languoremgame/languorem-website/issues"
+  },
+  "homepage": "https://github.com/languoremgame/languorem-website#readme",
+  "dependencies": {
+    "less": "^3.9.0",
+    "nunjucks": "^3.1.7",
+    "showdown": "^1.9.0"
+  }
+}
